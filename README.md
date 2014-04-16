@@ -17,7 +17,8 @@ Grabs the number of Pins for a URL.
 ```python
 from socialanalytics import pinterest
 
-pins_count = pinterest.getPins(target_url)```
+pins_count = pinterest.getPins(target_url)
+```
 
 
 
