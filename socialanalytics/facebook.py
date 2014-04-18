@@ -85,4 +85,13 @@ def getComments(url):
 		return j['error']['message']
 
 
+def getEncodedURL(url):
+	# Remove any URL tracking params
+	url = helpers.removeParams(url)
+	# Encode URL
+	url = helpers.encodeURL(url)
+	# Create Facebook API URL
+	return FACEBOOK_ENDPOINT + '%27' + url + '%27'
+
+
 
