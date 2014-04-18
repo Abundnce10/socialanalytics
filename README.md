@@ -1,4 +1,4 @@
-# socialanalytics
+# [socialanalytics](https://pypi.python.org/pypi/socialanalytics)
 
 socialanalytics provides insight into how a specific URL performs on a variety of social networks.
 
