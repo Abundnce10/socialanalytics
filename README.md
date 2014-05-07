@@ -25,19 +25,19 @@ print fb_obj
 
 total = facebook.getTotalInteractions(url)
 print total
-#> 2948
+#> { 'total_count': 2950 }
 
 shares = facebook.getShares(url)
 print shares
-#> 114
+#> { 'share_count': 114 }
 
 comments = facebook.getComments(url)
 print comments
-#> 720
+#> { 'comment_count': 720 }
 
-likes = facebookgetLikes(url)
+likes = facebook.getLikes(url)
 print likes
-#> 2114
+#> { 'like_count': 2116 }
 ```
 
 #### Pinterest
@@ -48,10 +48,34 @@ Grabs the number of Pins for a URL.
 from socialanalytics import pinterest
 
 url = 'http://allrecipes.com/recipe/crispy-edamame/detail.aspx'
-pins_count = pinterest.getPins(url)
+pin_count = pinterest.getPins(url)
 print pins_count
-#> 958634
+#> { 'pin_count': 962508 }
 ```
 
+#### Twitter
 
+Grabs the number of Twitter shares for a URL.
+
+```python
+from socialanalytics import twitter
+
+url = 'http://www.mindbodygreen.com/0-13633/an-11-minute-breathing-exercise-for-stronger-abs-a-clearer-mind.html'
+share_count = pinterest.getPins(url)
+print share_count
+#> { 'share_count': 52 }
+```
+
+#### Google+
+
+Grabs the number of Google+ +1's for a URL.
+
+```python
+from socialanalytics import google_plus
+
+url = 'http://www.theatlantic.com/business/archive/2014/03/how-you-i-and-everyone-got-the-top-1-percent-all-wrong/359862/'
+plus_count = google_plus.getPlusOnes(url)
+print plus_count
+#> { 'plus_count': 434 }
+```
 
