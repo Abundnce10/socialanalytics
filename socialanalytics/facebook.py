@@ -19,7 +19,7 @@ def getTotalInteractions(url):
 			# Sum shares, likes, and comments
 			return { 'total_count': sum(j['data'][0].values()) }
 		else:
-			return j['error']['message']
+			return { 'error': j['error']['message'] }
 	except Exception as e:
 		return { 'error': e }
 
@@ -57,7 +57,7 @@ def getShares(url):
 		if j['data']:
 			return { 'share_count': j['data'][0]['share_count'] }
 		else:
-			return j['error']['message']
+			return { 'error': j['error']['message'] }
 	except Exception as e:
 		return { 'error': e }
 
@@ -76,7 +76,7 @@ def getLikes(url):
 		if j['data']:
 			return { 'like_count': j['data'][0]['like_count'] }
 		else:
-			return j['error']['message']
+			return { 'error': j['error']['message'] }
 	except Exception as e:
 		return { 'error': e }
 
@@ -95,7 +95,7 @@ def getComments(url):
 		if j['data']:
 			return { 'comment_count': j['data'][0]['comment_count'] }
 		else:
-			return j['error']['message']
+			return { 'error': j['error']['message'] }
 	except Exception as e:
 		return { 'error': e }
 
