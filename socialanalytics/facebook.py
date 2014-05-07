@@ -11,14 +11,17 @@ def getTotalInteractions(url):
 	url = helpers.encodeURL(url)
 	# Create Facebook API URL
 	target_url = FACEBOOK_ENDPOINT + '%27' + url + '%27'
-	# Hit Facebook API
-	r = requests.get(target_url)
-	j = r.json()
-	if j['data']:
-		# Sum shares, likes, and comments
-		return sum(j['data'][0].values())
-	else:
-		return j['error']['message']
+	try:
+		# Hit Facebook API
+		r = requests.get(target_url)
+		j = r.json()
+		if j['data']:
+			# Sum shares, likes, and comments
+			return sum(j['data'][0].values())
+		else:
+			return j['error']['message']
+	except Exception as e:
+		return { 'error': e }
 
 
 def getObject(url):
@@ -28,13 +31,16 @@ def getObject(url):
 	url = helpers.encodeURL(url)
 	# Create Facebook API URL
 	target_url = FACEBOOK_ENDPOINT + '%27' + url + '%27'
-	# Hit Facebook API
-	r = requests.get(target_url)
-	j = r.json()
-	if j['data']:
-		return j['data'][0]
-	else:
-		return j['error']['message']
+	try:
+		# Hit Facebook API
+		r = requests.get(target_url)
+		j = r.json()
+		if j['data']:
+			return j['data'][0]
+		else:
+			return j['error']['message']
+	except Exception as e:
+		return { 'error': e }
 
 
 def getShares(url):
@@ -44,13 +50,16 @@ def getShares(url):
 	url = helpers.encodeURL(url)
 	# Create Facebook API URL
 	target_url = FACEBOOK_ENDPOINT + '%27' + url + '%27'
-	# Hit Facebook API
-	r = requests.get(target_url)
-	j = r.json()
-	if j['data']:
-		return j['data'][0]['share_count']
-	else:
-		return j['error']['message']
+	try:
+		# Hit Facebook API
+		r = requests.get(target_url)
+		j = r.json()
+		if j['data']:
+			return j['data'][0]['share_count']
+		else:
+			return j['error']['message']
+	except Exception as e:
+		return { 'error': e }
 
 
 def getLikes(url):
@@ -60,13 +69,16 @@ def getLikes(url):
 	url = helpers.encodeURL(url)
 	# Create Facebook API URL
 	target_url = FACEBOOK_ENDPOINT + '%27' + url + '%27'
-	# Hit Facebook API
-	r = requests.get(target_url)
-	j = r.json()
-	if j['data']:
-		return j['data'][0]['like_count']
-	else:
-		return j['error']['message']
+	try:
+		# Hit Facebook API
+		r = requests.get(target_url)
+		j = r.json()
+		if j['data']:
+			return j['data'][0]['like_count']
+		else:
+			return j['error']['message']
+	except Exception as e:
+		return { 'error': e }
 
 
 def getComments(url):
@@ -76,13 +88,16 @@ def getComments(url):
 	url = helpers.encodeURL(url)
 	# Create Facebook API URL
 	target_url = FACEBOOK_ENDPOINT + '%27' + url + '%27'
-	# Hit Facebook API
-	r = requests.get(target_url)
-	j = r.json()
-	if j['data']:
-		return j['data'][0]['comment_count']
-	else:
-		return j['error']['message']
+	try:
+		# Hit Facebook API
+		r = requests.get(target_url)
+		j = r.json()
+		if j['data']:
+			return j['data'][0]['comment_count']
+		else:
+			return j['error']['message']
+	except Exception as e:
+		return { 'error': e }
 
 
 def getEncodedURL(url):
