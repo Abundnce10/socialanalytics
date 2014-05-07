@@ -17,7 +17,7 @@ def getTotalInteractions(url):
 		j = r.json()
 		if j['data']:
 			# Sum shares, likes, and comments
-			return sum(j['data'][0].values())
+			return { 'total_count': sum(j['data'][0].values()) }
 		else:
 			return j['error']['message']
 	except Exception as e:
@@ -38,7 +38,7 @@ def getObject(url):
 		if j['data']:
 			return j['data'][0]
 		else:
-			return j['error']['message']
+			return { 'error': j['error']['message'] }
 	except Exception as e:
 		return { 'error': e }
 
@@ -55,7 +55,7 @@ def getShares(url):
 		r = requests.get(target_url)
 		j = r.json()
 		if j['data']:
-			return j['data'][0]['share_count']
+			return { 'share_count': j['data'][0]['share_count'] }
 		else:
 			return j['error']['message']
 	except Exception as e:
@@ -74,7 +74,7 @@ def getLikes(url):
 		r = requests.get(target_url)
 		j = r.json()
 		if j['data']:
-			return j['data'][0]['like_count']
+			return { 'like_count': j['data'][0]['like_count'] }
 		else:
 			return j['error']['message']
 	except Exception as e:
@@ -93,7 +93,7 @@ def getComments(url):
 		r = requests.get(target_url)
 		j = r.json()
 		if j['data']:
-			return j['data'][0]['comment_count']
+			return { 'comment_count': j['data'][0]['comment_count'] }
 		else:
 			return j['error']['message']
 	except Exception as e:

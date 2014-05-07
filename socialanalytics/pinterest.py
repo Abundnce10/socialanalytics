@@ -21,14 +21,14 @@ def getPins(url):
 			key_len = len('\"count\"')
 			# Convert pin_count to integer
 			pin_count = int(r.text[(start + key_len + 1):end].strip().replace('"',''))
-			return pin_count
+			return { 'pin_count': pin_count }
 		else:
 			# Parse error
 			start = r.text.find('\"error\"')
 			end = r.text.find(',', start+1)
 			key_len = len('\"error\"')
 			# Return error message
-			return r.text[(start + key_len + 1):end].strip().replace('"', '')
+			return { 'error': r.text[(start + key_len + 1):end].strip().replace('"', '') }
 	except Exception as e:
-		return e
+		return { 'error': e }
 
