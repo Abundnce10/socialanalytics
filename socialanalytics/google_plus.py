@@ -4,24 +4,6 @@ import requests
 # Google+ API
 GOOGLE_ENDPOINT = "https://plusone.google.com/_/+1/fastbutton?url="
 
-
-def getPlusOnes(url):
-	# Remove any URL tracking params
-	url = helpers.removeParams(url)
-	# Encode URL
-	url = helpers.encodeURL(url)
-	# Create Google+ API URL
-	target_url = GOOGLE_ENDPOINT + url
-	"""
-	# Hit Google+ API
-	try:
-		r = requests.get(target_url)
-		j = r.json()
-		# Return Count value
-		return {'share_count': j['count'] }
-	except Exception as e:
-		return { 'error': e }
-	"""
 	
 
 def getPlusOnes(url):
@@ -45,7 +27,7 @@ def getPlusOnes(url):
 			plus_count = int(float(r.text[start+key_len:end].strip()))
 			return { 'plus_count': plus_count }
 		else:
-			return { 'error': 'Please provide an actual URL. Remember to use http://...' }
+			return { 'error': 'Remember to use http://...' }
 	except Exception as e:
 		return { 'error': 'Please provide an actual URL. Remember to use http://...' }
 

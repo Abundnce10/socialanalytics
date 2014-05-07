@@ -3,5 +3,7 @@ README
 setup.py
 socialanalytics/__init__.py
 socialanalytics/facebook.py
+socialanalytics/google_plus.py
 socialanalytics/helpers.py
 socialanalytics/pinterest.py
+socialanalytics/twitter.py
