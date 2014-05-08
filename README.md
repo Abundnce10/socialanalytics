@@ -49,7 +49,7 @@ from socialanalytics import pinterest
 
 url = 'http://allrecipes.com/recipe/crispy-edamame/detail.aspx'
 pin_count = pinterest.getPins(url)
-print pins_count
+print pin_count
 #> { 'pin_count': 962508 }
 ```
 
