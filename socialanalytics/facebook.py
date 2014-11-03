@@ -15,7 +15,7 @@ def getTotalInteractions(url):
 		# Hit Facebook API
 		r = requests.get(target_url)
 		j = r.json()
-		if j['data']:
+		if 'data' in j:
 			# Sum shares, likes, and comments
 			return { 'total_count': sum(j['data'][0].values()) }
 		else:
@@ -35,7 +35,7 @@ def getObject(url):
 		# Hit Facebook API
 		r = requests.get(target_url)
 		j = r.json()
-		if j['data']:
+		if 'data' in j:
 			return j['data'][0]
 		else:
 			return { 'error': j['error']['message'] }
@@ -54,7 +54,7 @@ def getShares(url):
 		# Hit Facebook API
 		r = requests.get(target_url)
 		j = r.json()
-		if j['data']:
+		if 'data' in j:
 			return { 'share_count': j['data'][0]['share_count'] }
 		else:
 			return { 'error': j['error']['message'] }
@@ -73,7 +73,7 @@ def getLikes(url):
 		# Hit Facebook API
 		r = requests.get(target_url)
 		j = r.json()
-		if j['data']:
+		if 'data' in j:
 			return { 'like_count': j['data'][0]['like_count'] }
 		else:
 			return { 'error': j['error']['message'] }
@@ -92,7 +92,7 @@ def getComments(url):
 		# Hit Facebook API
 		r = requests.get(target_url)
 		j = r.json()
-		if j['data']:
+		if 'data' in j:
 			return { 'comment_count': j['data'][0]['comment_count'] }
 		else:
 			return { 'error': j['error']['message'] }
