@@ -61,7 +61,7 @@ Grabs the number of Twitter shares for a URL.
 from socialanalytics import twitter
 
 url = 'http://www.mindbodygreen.com/0-13633/an-11-minute-breathing-exercise-for-stronger-abs-a-clearer-mind.html'
-share_count = pinterest.getPins(url)
+share_count = pinterest.getShares(url)
 print share_count
 #> { 'share_count': 52 }
 ```
