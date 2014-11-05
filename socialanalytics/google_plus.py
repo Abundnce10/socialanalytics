@@ -28,6 +28,8 @@ def getPlusOnes(url):
 			return { 'plus_count': plus_count }
 		else:
 			return { 'error': 'Remember to use http://...' }
+	except ValueError as e:
+		return { 'plus_count': 0 }
 	except Exception as e:
 		return { 'error': 'Please provide an actual URL. Remember to use http://...' }
 
