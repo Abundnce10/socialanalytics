@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='socialanalytics',
-    version='0.3.1',
+    version='0.3.3',
     author='Michael Stitt',
     author_email='michaelstitt10@hotmail.com',
     packages=['socialanalytics'],

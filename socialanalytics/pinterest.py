@@ -20,7 +20,7 @@ def getPins(url):
 			end = r.text.find(',', start+1)
 			key_len = len('\"count\"')
 			# Convert pin_count to integer
-			pin_count = int(r.text[(start + key_len + 1):end].strip().replace('"',''))
+			pin_count = int(r.text[(start + key_len + 1):end].strip().replace('"','').replace("}",""))
 			return { 'pin_count': pin_count }
 		else:
 			# Parse error
